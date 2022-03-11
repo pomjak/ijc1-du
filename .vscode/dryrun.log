@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
+make: Leaving directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
+ 
+Makefile:1: *** missing separator.  Stop.
+ 
