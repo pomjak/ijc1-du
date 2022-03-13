@@ -23,9 +23,6 @@ void warning_msg(const char *fmt, ...)
 
 void error_exit(const char *fmt, ...)
 {
-    va_list list;
-    va_start(list,fmt);
-    vfprintf(stderr,fmt,list);
-    va_end(list);
+    warning_msg(fmt);
     exit(EXIT_FAILURE);
 }

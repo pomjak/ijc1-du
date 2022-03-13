@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Mar 13 19:15:43 2022
+# Make data base, printed on Sun Mar 13 19:31:12 2022
 
 # Variables
 
@@ -279,13 +279,13 @@ all:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 21):
 	${CC} -m32 primes.c -o primes
- 
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
 
+ 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-13 19:15:18.73715424
+#  Last modified 2022-03-13 19:31:06.238289156
 #  File has been updated.
 #  Successfully updated.
 
@@ -319,13 +319,12 @@ run: make
 
 # No general ('VPATH' variable) search path.
 
- 
 # strcache buffers: 1 (0) / strings = 21 / storage = 156 B / avg = 7 B
 # current buf: size = 8162 B / used = 156 B / count = 21 / avg = 7 B
 
 # strcache performance: lookups = 32 / hit rate = 34%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=1/32=3%
-# Finished Make data base on Sun Mar 13 19:15:43 2022
+# Finished Make data base on Sun Mar 13 19:31:12 2022
 
  
