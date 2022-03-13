@@ -2,7 +2,6 @@
 #       IJC-1 
 #       Author : Pomsar Jakub
 #       Date : March 10, 2022
-#${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes
 #
 
 CC = gcc
@@ -10,7 +9,7 @@ CFLAGS = -O0 -g -std=c11 -pedantic -Wall -Wextra -lm
 
 make: primes.c
 	${CC} ${CFLAGS} primes.c -o primes
-
+	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
 run: make
 	./primes
 	./primes-i

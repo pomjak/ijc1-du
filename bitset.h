@@ -88,15 +88,23 @@ static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
 *   bitset_free(jmeno_pole)
 *       uvolní paměť dynamicky (bitset_alloc) alokovaného pole
 */
+#ifdef USE_INLINE
+#define
+static inline bitset_free(bitset_t jmeno pole){free(jmeno_pole)}
+#else
 #define bitset_free(jmeno_pole) free(jmeno_pole)
-
+#endif
 
 /*
 *    bitset_size(jmeno_pole)
 *       vrátí deklarovanou velikost pole v bitech (uloženou v poli)
 */
+#ifdef USE_INLINE
+#define
+static inline bitset_size(bitset_t jmeno_pole){return jmeno_pole[0];}
+#else
 #define bitset_size(jmeno_pole) jmeno_pole[0]
-
+#endif
 
 /*
 *bitset_setbit(jmeno_pole,index,výraz)
@@ -104,11 +112,20 @@ static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
 *       (nulový výraz == bit 0, nenulový výraz == bit 1)
 *       Př: bitset_setbit(p,20,1);
 */
+#ifdef USE_INLINE
+#define
+static inline bitset_setbit (bitset_t jmeno_pole, int vyraz)
+{
+    if((unsigned long)index > bitset_size(jmeno_pole) - 1){exit(EXIT_FAILURE);}
+    else if(vyraz) { jmeno_pole[1 + (index / sizeof(bitset_t))] |= (1UL << (index % sizeof(bitset_t))); }
+    else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }
+}
+#else
 #define bitset_setbit(jmeno_pole,index,vyraz)\
 if((unsigned long)index > bitset_size(jmeno_pole) - 1){exit(EXIT_FAILURE);}\
 else if(vyraz) { jmeno_pole[1 + (index / sizeof(bitset_t))] |= (1UL << (index % sizeof(bitset_t))); }\
-else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }\
-
+else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }
+#endif
 
 /*
 *    bitset_getbit(jmeno_pole,index)
@@ -116,6 +133,19 @@ else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bi
 *       Př: if(bitset_getbit(p,i)==1) printf("1");
 *           if(!bitset_getbit(p,i))   printf("0");
 */
+#ifdef USE_INLINE
+#define
+static inline  bitset_getbit(bitset_t jmeno_pole, bitset_index_t index)
+{
+    (((unsigned long)index > (bitset_size(jmeno_pole) - 1))\
+    ?\
+    exit(EXIT_FAILURE), 0UL\
+    :\
+    ((jmeno_pole[1 + (index / (sizeof(bitset_t)*CHAR_BIT))]\
+    &\
+    (1UL << (index % (sizeof(bitset_t)*CHAR_BIT)))) > 0) ? 1UL : 0UL)
+}
+#else
 #define bitset_getbit(jmeno_pole,index)\
 (((unsigned long)index > (bitset_size(jmeno_pole) - 1))\
 ?\
@@ -124,4 +154,5 @@ exit(EXIT_FAILURE), 0UL\
 ((jmeno_pole[1 + (index / (sizeof(bitset_t)*CHAR_BIT))]\
 &\
 (1UL << (index % (sizeof(bitset_t)*CHAR_BIT)))) > 0) ? 1UL : 0UL)
+#endif
 #endif
