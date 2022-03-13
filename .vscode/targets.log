@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:1: *** missing separator.  Stop.
+make: *** No rule to make target 'all'.  Stop.
  
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ Makefile:1: *** missing separator.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Mar 11 22:22:24 2022
+# Make data base, printed on Sun Mar 13 12:46:35 2022
 
 # Variables
 
@@ -48,6 +48,8 @@ GDM_LANG = en_US
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
+# makefile (from 'Makefile', line 9)
+CFLAGS = -O0 -g -std=c11 -pedantic -Wall -Wextra -lm
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -58,7 +60,7 @@ MAKEFILE_LIST :=  Makefile
 @F = $(notdir $@)
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
-# environment
+# 'override' directive
 GNUMAKEFLAGS := 
 # environment
 MANDATORY_PATH = /usr/share/gconf/cinnamon.mandatory.path
@@ -85,7 +87,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1792,unix/natascha:/tmp/.ICE-unix/1792
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1581,unix/natascha:/tmp/.ICE-unix/1581
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -103,7 +105,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 85087
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2424
 # automatic
 %F = $(notdir $%)
 # environment
@@ -119,7 +121,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1896
+SSH_AGENT_PID = 1757
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -135,7 +137,7 @@ VSCODE_CODE_CACHE_PATH = /home/pomjak/.config/Code/CachedData/c722ca6c7eed3d7987
 # environment
 LOGNAME = pomjak
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
@@ -154,8 +156,10 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 0
+# makefile (from 'Makefile', line 8)
+CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2cbbead9-c777-4094-bba7-1e0831ce50e7.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4f98994e-fbc0-4045-9afe-edc16367aba2.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -163,7 +167,7 @@ USER = pomjak
 # environment
 LC_MONETARY = cs_CZ.UTF-8
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := make
 # environment
 XDG_CURRENT_DESKTOP = X-Cinnamon
 # automatic
@@ -206,7 +210,6 @@ MAKEFILES :=
 LC_NUMERIC = cs_CZ.UTF-8
 # automatic
 <F = $(notdir $<)
- 
 # environment
 LC_MEASUREMENT = cs_CZ.UTF-8
 # environment
@@ -230,9 +233,9 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 85087
+VSCODE_PID = 2424
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=10/122=8%
+# Load=111/1024=11%, Rehash=0, Collisions=10/136=7%
 
 # Pattern-specific Variable Values
 
@@ -251,17 +254,40 @@ VSCODE_PID = 85087
 # Files
 
 # Not a target:
-all:
-#  Command line target.
+primes.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-Makefile:
+e:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	${CC} -E primes.c
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+32: primes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+	${CC} -m32 primes.c -o primes
+ 
+	${CC} -m32 -DUSE_INLINE primes.c -o primes
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-13 12:45:46.932387304
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -269,20 +295,42 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+make: primes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 12):
+	${CC} ${CFLAGS} primes.c -o primes
+
+run: make
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	./primes
+	./primes-i
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 26):
+	rm -rf primes primes-i .dSYM
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/5=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/23=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 124 B / avg = 8 B
-# current buf: size = 8162 B / used = 124 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 137 B / avg = 7 B
+# current buf: size = 8162 B / used = 137 B / count = 19 / avg = 7 B
 
-# strcache performance: lookups = 18 / hit rate = 22%
+# strcache performance: lookups = 31 / hit rate = 38%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Fri Mar 11 22:22:24 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/31=3%
+# Finished Make data base on Sun Mar 13 12:46:35 2022
 
  

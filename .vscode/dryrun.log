@@ -1,6 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
+gcc -O0 -g -std=c11 -pedantic -Wall -Wextra -lm primes.c -o primes
 make: Leaving directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
- 
-Makefile:1: *** missing separator.  Stop.
  
