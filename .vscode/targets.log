@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Mar 13 13:16:27 2022
+# Make data base, printed on Sun Mar 13 17:30:13 2022
 
 # Variables
 
@@ -48,7 +48,7 @@ GDM_LANG = en_US
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 10)
 CFLAGS = -O0 -g -std=c11 -pedantic -Wall -Wextra -lm
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
@@ -156,7 +156,7 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 7)
+# makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4f98994e-fbc0-4045-9afe-edc16367aba2.sock
@@ -243,9 +243,9 @@ VSCODE_PID = 2424
 
 # Directories
 
-# . (device 2050, inode 44436219): 9 files, no impossibilities.
+# . (device 2050, inode 44436219): 12 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -263,7 +263,7 @@ e:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 22):
+#  recipe to execute (from 'Makefile', line 26):
 	${CC} -E primes.c
 
 # Not a target:
@@ -277,15 +277,17 @@ all:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
+#  recipe to execute (from 'Makefile', line 20):
 	${CC} -m32 primes.c -o primes
  
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
+	./primes
+	./primes-i
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-13 13:14:21.692285976
+#  Last modified 2022-03-13 17:29:59.913248331
 #  File has been updated.
 #  Successfully updated.
 
@@ -299,7 +301,7 @@ make: primes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 13):
 	${CC} ${CFLAGS} primes.c -o primes
 	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
 
@@ -307,7 +309,7 @@ run: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 16):
 	./primes
 	./primes-i
 
@@ -315,7 +317,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 25):
+#  recipe to execute (from 'Makefile', line 29):
 	rm -rf primes primes-i .dSYM
 
 # files hash-table stats:
@@ -326,12 +328,12 @@ clean:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 137 B / avg = 7 B
-# current buf: size = 8162 B / used = 137 B / count = 19 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 162 B / avg = 7 B
+# current buf: size = 8162 B / used = 162 B / count = 22 / avg = 7 B
 
-# strcache performance: lookups = 31 / hit rate = 38%
+# strcache performance: lookups = 34 / hit rate = 35%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Sun Mar 13 13:16:27 2022
+# Load=22/8192=0%, Rehash=0, Collisions=1/34=3%
+# Finished Make data base on Sun Mar 13 17:30:13 2022
 
  

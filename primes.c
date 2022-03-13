@@ -1,8 +1,17 @@
+/*
+*       primes.c
+*       IJC-DU1 
+*       Author : Pomsar Jakub
+*       Organization : VUT FIT
+*       Date : March 10, 2022
+*       Compiled : gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04)
+*/
 #include "bitset.h"
+#include "error.h"
 
 int main(void)
 {
-    bitset_create(p,-5);
+    bitset_create(p,5);
     //bitset_create(p,999);
 
     for(int i = 0 ; (unsigned long)i < bitset_size(p) ; i++)

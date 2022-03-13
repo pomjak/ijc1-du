@@ -1,6 +1,8 @@
 /*
-*       IJC-1 
+*       bitset.h
+*       IJC-DU1 
 *       Author : Pomsar Jakub
+*       Organization : VUT FIT
 *       Date : March 10, 2022
 *       Compiled : gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04)
 */

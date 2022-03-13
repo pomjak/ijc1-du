@@ -1,6 +1,8 @@
 #
-#       IJC-1 
+#		Makefile
+#       IJC-DU1 
 #       Author : Pomsar Jakub
+#		Organization : VUT FIT
 #       Date : March 10, 2022
 #
 
@@ -17,6 +19,8 @@ run: make
 32: primes.c
 	${CC} -m32 primes.c -o primes
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
+	./primes
+	./primes-i
 
 e:
 	${CC} -E primes.c
