@@ -13,6 +13,7 @@
 #ifndef BITSET_H
 #define BITSET_H
 #define N 300000000
+#define OFFSET 1 //vyhledem k 1. prvku kde je ulozena velikost
 
 typedef unsigned long bitset_t;
 // Typ bitového pole (pro předávání parametru do funkce odkazem).
@@ -31,22 +32,14 @@ typedef unsigned long bitset_index_t;
 *           bitset_create(q,100000L);    // q = pole 100000 bitů, nulováno
 *           bitset_create(q,-100);       // chyba při překladu
 */
-#ifdef USE_INLINE
-#define 
-static inline bitset_create(bitset_t jmeno_pole, bitset_index_t velikost)
-{
-    bitset_t jmeno_pole[((velikost/(sizeof(bitset_t) * CHAR_BIT)) + ((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + 1)]={(unsigned long)velikost,0,};
-    static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
-}
 
-#else
 #define bitset_create(jmeno_pole,velikost)\
 bitset_t jmeno_pole\
 [((velikost/(sizeof(bitset_t) * CHAR_BIT))\
 +\
-((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + 1)]={(unsigned long)velikost,0,};\
+((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + OFFSET)]={(unsigned long)velikost,0,};\
 static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
-#endif
+
 
 /*
 *    bitset_alloc(jmeno_pole,velikost)
@@ -57,40 +50,23 @@ static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
 *       Pokud alokace selže, ukončete program s chybovým hlášením:
 *       "bitset_alloc: Chyba alokace paměti"
 */
-#ifdef USE_INLINE
-#define 
-static inline bitset_alloc(bitset_t jmeno_pole, bitset_index_t velikost)
-{
-    bitset_t *jmeno_pole = (bitset_t*) calloc(((velikost / (sizeof(bitset_t) * CHAR_BIT))\
-    +\
-    ((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + 1),sizeof(bitset_t));
-    if(jmeno_pole == NULL)
-    {   
-        fprintf(stderr,"bitset_alloc: Chyba alokace pameti"); 
-        exit(EXIT_FAILURE);
-    }
-    jmeno_pole[0] = velikost;
-    static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
-}
 
-#else
 #define bitset_alloc(jmeno_pole, velikost)\
 bitset_t *jmeno_pole = (bitset_t*) calloc(\
 ((velikost / (sizeof(bitset_t) * CHAR_BIT))\
 +\
-((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + 1),sizeof(bitset_t));\
+((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + OFFSET),sizeof(bitset_t));\
 if(jmeno_pole == NULL){fprintf(stderr,"bitset_alloc: Chyba alokace pameti"); exit(EXIT_FAILURE);}\
 jmeno_pole[0] = velikost;\
 static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
-#endif
+
 
 /*
 *   bitset_free(jmeno_pole)
 *       uvolní paměť dynamicky (bitset_alloc) alokovaného pole
 */
 #ifdef USE_INLINE
-#define
-static inline bitset_free(bitset_t jmeno pole){free(jmeno_pole)}
+static inline void bitset_free(bitset_t *jmeno_pole){free(jmeno_pole);}
 #else
 #define bitset_free(jmeno_pole) free(jmeno_pole)
 #endif
@@ -100,8 +76,7 @@ static inline bitset_free(bitset_t jmeno pole){free(jmeno_pole)}
 *       vrátí deklarovanou velikost pole v bitech (uloženou v poli)
 */
 #ifdef USE_INLINE
-#define
-static inline bitset_size(bitset_t jmeno_pole){return jmeno_pole[0];}
+static inline bitset_t bitset_size(bitset_t *jmeno_pole){return (jmeno_pole[0]);}
 #else
 #define bitset_size(jmeno_pole) jmeno_pole[0]
 #endif
@@ -113,18 +88,17 @@ static inline bitset_size(bitset_t jmeno_pole){return jmeno_pole[0];}
 *       Př: bitset_setbit(p,20,1);
 */
 #ifdef USE_INLINE
-#define
-static inline bitset_setbit (bitset_t jmeno_pole, int vyraz)
+static inline void bitset_setbit (bitset_t *jmeno_pole,unsigned long index, int vyraz)
 {
-    if((unsigned long)index > bitset_size(jmeno_pole) - 1){exit(EXIT_FAILURE);}
-    else if(vyraz) { jmeno_pole[1 + (index / sizeof(bitset_t))] |= (1UL << (index % sizeof(bitset_t))); }
-    else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }
+    if(index > bitset_size(jmeno_pole) - OFFSET){exit(EXIT_FAILURE);}
+    else if(vyraz) { jmeno_pole[OFFSET + (index / sizeof(bitset_t))] |= (1UL << (index % sizeof(bitset_t))); }
+    else { jmeno_pole[OFFSET + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }
 }
 #else
 #define bitset_setbit(jmeno_pole,index,vyraz)\
-if((unsigned long)index > bitset_size(jmeno_pole) - 1){exit(EXIT_FAILURE);}\
-else if(vyraz) { jmeno_pole[1 + (index / sizeof(bitset_t))] |= (1UL << (index % sizeof(bitset_t))); }\
-else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }
+if((unsigned long)index > bitset_size(jmeno_pole) - OFFSET){exit(EXIT_FAILURE);}\
+else if(vyraz) { jmeno_pole[OFFSET + (index / sizeof(bitset_t))] |= (1UL << (index % sizeof(bitset_t))); }\
+else { jmeno_pole[OFFSET + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bitset_t))); }
 #endif
 
 /*
@@ -134,16 +108,15 @@ else { jmeno_pole[1 + (index / sizeof(bitset_t))] &= ~(1UL << (index % sizeof(bi
 *           if(!bitset_getbit(p,i))   printf("0");
 */
 #ifdef USE_INLINE
-#define
-static inline  bitset_getbit(bitset_t jmeno_pole, bitset_index_t index)
+static inline bitset_t bitset_getbit(bitset_t *jmeno_pole, bitset_index_t index)
 {
-    (((unsigned long)index > (bitset_size(jmeno_pole) - 1))\
+    return (((unsigned long)index > (bitset_size(jmeno_pole) - OFFSET))\
     ?\
     exit(EXIT_FAILURE), 0UL\
     :\
-    ((jmeno_pole[1 + (index / (sizeof(bitset_t)*CHAR_BIT))]\
+    ((jmeno_pole[OFFSET + (index / (sizeof(bitset_t)*CHAR_BIT))]\
     &\
-    (1UL << (index % (sizeof(bitset_t)*CHAR_BIT)))) > 0) ? 1UL : 0UL)
+    (1UL << (index % (sizeof(bitset_t)*CHAR_BIT)))) > 0) ? 1UL : 0UL);
 }
 #else
 #define bitset_getbit(jmeno_pole,index)\
