@@ -7,10 +7,13 @@
 #
 
 CC = gcc
-CFLAGS = -O0 -g -std=c11 -pedantic -Wall -Wextra -lm
+CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra -lm
 
 make: primes.c
 	${CC} ${CFLAGS} primes.c -o primes
+	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
+
+i: primes.c
 	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
 
 run: make
@@ -23,3 +26,11 @@ run: make
 
 e:
 	${CC} -E primes.c
+
+fac: make
+	./primes|factor
+	./primes|factor
+
+time: make
+	time ./primes
+	time ./primes

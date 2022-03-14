@@ -11,6 +11,7 @@
 #include<stdlib.h>
 #include<limits.h>
 #include<assert.h>
+#include<time.h>
 
 #ifndef BITSET_H
 #define BITSET_H
@@ -40,7 +41,7 @@ bitset_t jmeno_pole\
 [((velikost/(sizeof(bitset_t) * CHAR_BIT))\
 +\
 ((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + OFFSET)]={(unsigned long)velikost,0,};\
-static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
+static_assert(velikost =< N, "Spatne zadana velikost statickeho pole!!!\n");
 
 
 /*
@@ -60,7 +61,7 @@ bitset_t *jmeno_pole = (bitset_t*) calloc(\
 ((velikost % (sizeof(bitset_t) * CHAR_BIT)) > 0 ? 1 : 0) + OFFSET),sizeof(bitset_t));\
 if(jmeno_pole == NULL){fprintf(stderr,"bitset_alloc: Chyba alokace pameti"); error_exit("bitset_alloc: Chyba alokace paměti");}\
 jmeno_pole[0] = velikost;\
-static_assert(velikost < N, "Spatne zadana velikost statickeho pole!!!\n");
+static_assert(velikost <= N, "Spatne zadana velikost statickeho pole!!!\n");
 
 
 /*
@@ -78,7 +79,7 @@ static inline void bitset_free(bitset_t *jmeno_pole){free(jmeno_pole);}
 *       vrátí deklarovanou velikost pole v bitech (uloženou v poli)
 */
 #ifdef USE_INLINE
-static inline bitset_t bitset_size(bitset_t *jmeno_pole){return (jmeno_pole[0]);}
+static inline bitset_t bitset_size(bitset_t *jmeno_pole){return jmeno_pole[0];}
 #else
 #define bitset_size(jmeno_pole) jmeno_pole[0]
 #endif
