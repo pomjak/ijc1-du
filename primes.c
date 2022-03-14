@@ -29,6 +29,7 @@ int main(void)
         }
         if(saved == 10)break;
     }
+
     for (int idx = 9; idx > -1; idx--)
         printf("%lu\n",pole[idx]);
 

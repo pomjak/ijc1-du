@@ -25,7 +25,7 @@ run: make
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
 
 e:
-	${CC} -E primes.c
+	${CC} -E -P primes.c
 
 fac: make
 	./primes|factor
