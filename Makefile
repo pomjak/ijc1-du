@@ -16,6 +16,9 @@ make: primes.c
 i: primes.c
 	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
 
+macro: primes.c
+	${CC} ${CFLAGS} primes.c -o primes
+	
 run: make
 	./primes
 	./primes-i
@@ -24,7 +27,7 @@ run: make
 	${CC} -m32 primes.c -o primes
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
 
-e:
+e: primes.c
 	${CC} -E -P primes.c
 
 fac: make

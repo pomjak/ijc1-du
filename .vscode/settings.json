@@ -2,6 +2,8 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
         "bitset.h": "c",
-        "error.h": "c"
+        "error.h": "c",
+        "limits.h": "c",
+        "assert.h": "c"
     }
 }

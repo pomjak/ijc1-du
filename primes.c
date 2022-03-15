@@ -16,10 +16,13 @@
 int main(void)
 {
     clock_t start = clock();
-    bitset_alloc(p,N);
+    bitset_create(p,300000000);
+
     int saved = 0;
     bitset_t pole[10] = {0,};
+
     Eratosthenes(p);
+
     for(bitset_index_t i = N - OFFSET;i > 2;i--)
     {
         if(!bitset_getbit(p,i))
@@ -33,7 +36,9 @@ int main(void)
     for (int idx = 9; idx > -1; idx--)
         printf("%lu\n",pole[idx]);
 
-    bitset_free(p);
+    //bitset_free(p);
+
     fprintf(stderr, "Time=%.3g\n", (double)(clock()-start)/CLOCKS_PER_SEC);
+
     return 0;
 }

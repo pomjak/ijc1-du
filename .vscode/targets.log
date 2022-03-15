@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Mar 14 15:06:12 2022
+# Make data base, printed on Tue Mar 15 13:34:44 2022
 
 # Variables
 
@@ -45,23 +45,21 @@ SHELL = /bin/sh
 # environment
 GDM_LANG = en_US
 # environment
- 
-VTE_VERSION = 6003
-# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/bin/code
+_ = /usr/share/code/code
 # makefile (from 'Makefile', line 10)
 CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra -lm
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
- 
 GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -83,11 +81,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/pomjak/.local/bin:/home/pomjak/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin=/home/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin/home/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/pomjak/.local/bin:/home/pomjak/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin=/home/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1693,unix/natascha:/tmp/.ICE-unix/1693
+GJS_DEBUG_OUTPUT = stderr
+# environment
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1589,unix/natascha:/tmp/.ICE-unix/1589
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -99,11 +99,13 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/pomjak
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5494
 # automatic
 %F = $(notdir $%)
 # environment
@@ -119,7 +121,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1797
+SSH_AGENT_PID = 1693
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -131,8 +133,6 @@ HOME = /home/pomjak
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CLI = 1
-# environment
 VSCODE_CODE_CACHE_PATH = /home/pomjak/.config/Code/CachedData/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1
 # environment
 LOGNAME = pomjak
@@ -140,8 +140,6 @@ LOGNAME = pomjak
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -152,18 +150,16 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 XDG_VTNR = 7
 # environment
 MAKELEVEL := 0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 0
 # makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c7743cbb-86e1-4fc5-8cc3-12b04f40b6fa.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8ef27235-7dde-40ca-b309-9d2cb4f939b4.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -174,7 +170,6 @@ LC_MONETARY = cs_CZ.UTF-8
 .DEFAULT_GOAL := make
 # environment
 XDG_CURRENT_DESKTOP = X-Cinnamon
- 
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -204,9 +199,9 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = cs_CZ.UTF-8
 # environment
-QT_ACCESSIBILITY = 1
+CINNAMON_VERSION = 5.2.7
 # environment
-DESKTOP_AUTOSTART_ID = 10817e63c641a81a58164725175343420700000016930005
+QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/cinnamon.default.path
 # default
@@ -220,11 +215,9 @@ LC_MEASUREMENT = cs_CZ.UTF-8
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/80834bdb_4c93_42bd_9193_c26f890d7541
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
-# environment
-GNOME_TERMINAL_SERVICE = :1.103
 # default
 SUFFIXES := 
 # environment
@@ -240,11 +233,9 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 9397
+VSCODE_PID = 5494
 # variable set hash-table stats:
-# Load=114/1024=11%, Rehash=0, Collisions=12/139=9%
+# Load=111/1024=11%, Rehash=0, Collisions=10/136=7%
 
 # Pattern-specific Variable Values
 
@@ -266,7 +257,7 @@ fac: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  recipe to execute (from 'Makefile', line 34):
 	./primes|factor
 	./primes|factor
 
@@ -276,11 +267,11 @@ primes.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-e:
+e: primes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 31):
 	${CC} -E -P primes.c
 
 i: primes.c
@@ -301,22 +292,31 @@ all:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
+ 
+#  recipe to execute (from 'Makefile', line 27):
 	${CC} -m32 primes.c -o primes
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-14 15:06:09.418281069
+#  Last modified 2022-03-14 16:46:50.161201446
 #  File has been updated.
 #  Successfully updated.
+
+macro: primes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	${CC} ${CFLAGS} primes.c -o primes
+	
 
 time: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 38):
 	time ./primes
 	time ./primes
 
@@ -338,25 +338,24 @@ run: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
+#  recipe to execute (from 'Makefile', line 23):
 	./primes
- 
 	./primes-i
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/28=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/31=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 203 B / avg = 7 B
-# current buf: size = 8162 B / used = 203 B / count = 26 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 206 B / avg = 7 B
+# current buf: size = 8162 B / used = 206 B / count = 27 / avg = 7 B
 
-# strcache performance: lookups = 43 / hit rate = 39%
+# strcache performance: lookups = 47 / hit rate = 42%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=3/43=7%
-# Finished Make data base on Mon Mar 14 15:06:12 2022
+# Load=27/8192=0%, Rehash=0, Collisions=3/47=6%
+# Finished Make data base on Tue Mar 15 13:34:44 2022
 
  
