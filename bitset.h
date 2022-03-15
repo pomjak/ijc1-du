@@ -12,6 +12,8 @@
 #include<limits.h>
 #include<assert.h>
 #include<time.h>
+#include "error.h"
+
 
 #ifndef BITSET_H
 #define BITSET_H
@@ -71,7 +73,7 @@ static_assert(velikost <= N, "Spatne zadana velikost statickeho pole!!!\n");
 *       uvolní paměť dynamicky (bitset_alloc) alokovaného pole
 */
 #ifdef USE_INLINE
-static inline void bitset_free(bitset_t *jmeno_pole){free(jmeno_pole);}
+ inline void bitset_free(bitset_t *jmeno_pole){free(jmeno_pole);}
 #else
 #define bitset_free(jmeno_pole) free(jmeno_pole)
 #endif
@@ -81,7 +83,7 @@ static inline void bitset_free(bitset_t *jmeno_pole){free(jmeno_pole);}
 *       vrátí deklarovanou velikost pole v bitech (uloženou v poli)
 */
 #ifdef USE_INLINE
-static inline bitset_t bitset_size(bitset_t *jmeno_pole){return jmeno_pole[0];}
+ inline bitset_t bitset_size(bitset_t *jmeno_pole){return jmeno_pole[0];}
 #else
 #define bitset_size(jmeno_pole) jmeno_pole[0]
 #endif
@@ -93,7 +95,7 @@ static inline bitset_t bitset_size(bitset_t *jmeno_pole){return jmeno_pole[0];}
 *       Př: bitset_setbit(p,20,1);
 */
 #ifdef USE_INLINE
-static inline void bitset_setbit (bitset_t *jmeno_pole,bitset_index_t index, int vyraz)
+ inline void bitset_setbit (bitset_t *jmeno_pole,bitset_index_t index, int vyraz)
 {
     if(index > bitset_size(jmeno_pole) - OFFSET)
     {
@@ -126,7 +128,7 @@ else { jmeno_pole[OFFSET + (index/BITSET_BIT)] &= ~(1UL << (index % BITSET_BIT))
 *           if(!bitset_getbit(p,i))   printf("0");
 */
 #ifdef USE_INLINE
-static inline bitset_t bitset_getbit(bitset_t *jmeno_pole, bitset_index_t index)
+ inline bitset_t bitset_getbit(bitset_t *jmeno_pole, bitset_index_t index)
 {
     return (((bitset_t)index > (bitset_size(jmeno_pole) - OFFSET))\
     ?\

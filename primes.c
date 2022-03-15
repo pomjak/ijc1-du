@@ -6,11 +6,10 @@
 *       Date : March 11, 2022
 *       Compiled : gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04)
 */
+
 #include "error.h"
-#include "error.c"
-#include "bitset.h"
 #include "eratosthenes.h"
-#include "eratosthenes.c"
+#include "bitset.h"
 
 
 int main(void)

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Mar 15 13:34:44 2022
+# Make data base, printed on Tue Mar 15 17:30:33 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # makefile (from 'Makefile', line 10)
-CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra -lm
+CFLAGS = -O0 -g -std=c11 -pedantic -Wall -Wextra -lm
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -87,7 +87,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1589,unix/natascha:/tmp/.ICE-unix/1589
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1743,unix/natascha:/tmp/.ICE-unix/1743
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -105,7 +105,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5494
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4548
 # automatic
 %F = $(notdir $%)
 # environment
@@ -121,7 +121,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1693
+SSH_AGENT_PID = 1847
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -159,7 +159,7 @@ SHLVL = 0
 # makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8ef27235-7dde-40ca-b309-9d2cb4f939b4.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e174d872-4f0d-4031-85aa-ae3f06fddb16.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -233,9 +233,11 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 5494
+VSCODE_PID = 4548
+# makefile (from 'Makefile', line 11)
+FILES = primes.c bitset.c error.c eratosthenes.c
 # variable set hash-table stats:
-# Load=111/1024=11%, Rehash=0, Collisions=10/136=7%
+# Load=112/1024=11%, Rehash=0, Collisions=10/137=7%
 
 # Pattern-specific Variable Values
 
@@ -243,9 +245,9 @@ VSCODE_PID = 5494
 
 # Directories
 
-# . (device 2050, inode 44436219): 14 files, no impossibilities.
+# . (device 2050, inode 44436219): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -257,7 +259,7 @@ fac: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 36):
 	./primes|factor
 	./primes|factor
 
@@ -271,15 +273,16 @@ e: primes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  recipe to execute (from 'Makefile', line 33):
 	${CC} -E -P primes.c
 
 i: primes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
-	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
+#  recipe to execute (from 'Makefile', line 19):
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
 
 # Not a target:
 all:
@@ -288,19 +291,24 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
+# Not a target:
+bitset.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 32: primes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-#  recipe to execute (from 'Makefile', line 27):
+#  recipe to execute (from 'Makefile', line 29):
 	${CC} -m32 primes.c -o primes
 	${CC} -m32 -DUSE_INLINE primes.c -o primes
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-14 16:46:50.161201446
+#  Last modified 2022-03-15 17:29:26.373321959
 #  File has been updated.
 #  Successfully updated.
 
@@ -308,17 +316,23 @@ macro: primes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
-	${CC} ${CFLAGS} primes.c -o primes
+#  recipe to execute (from 'Makefile', line 22):
+	${CC} ${CFLAGS} -o primes ${FILES}
 	
 
 time: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 40):
 	time ./primes
 	time ./primes
+
+# Not a target:
+eratosthenes.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -326,36 +340,43 @@ time: make
 #  Modification time never checked.
 #  File has not been updated.
 
-make: primes.c
+make: primes.c error.c bitset.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 13):
-	${CC} ${CFLAGS} primes.c -o primes
-	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
+#  recipe to execute (from 'Makefile', line 14):
+	ulimit -s 37000
+	${CC} ${CFLAGS} -o primes ${FILES}
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
 
 run: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 23):
+#  recipe to execute (from 'Makefile', line 25):
 	./primes
 	./primes-i
 
+# Not a target:
+error.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/31=0%
+# Load=16/1024=2%, Rehash=0, Collisions=2/37=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 206 B / avg = 7 B
-# current buf: size = 8162 B / used = 206 B / count = 27 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 193 B / avg = 7 B
+# current buf: size = 8162 B / used = 193 B / count = 26 / avg = 7 B
 
-# strcache performance: lookups = 47 / hit rate = 42%
+# strcache performance: lookups = 49 / hit rate = 46%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=3/47=6%
-# Finished Make data base on Tue Mar 15 13:34:44 2022
+# Load=26/8192=0%, Rehash=0, Collisions=4/49=8%
+# Finished Make data base on Tue Mar 15 17:30:33 2022
 
  

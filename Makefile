@@ -8,16 +8,17 @@
 
 CC = gcc
 CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra -lm
+FILES = primes.c bitset.c error.c eratosthenes.c
 
-make: primes.c
-	${CC} ${CFLAGS} primes.c -o primes
-	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
+make: primes.c error.c bitset.c eratosthenes.c
+	${CC} ${CFLAGS} -o primes ${FILES}
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
 
 i: primes.c
-	${CC} ${CFLAGS} -DUSE_INLINE primes.c -o primes-i
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
 
 macro: primes.c
-	${CC} ${CFLAGS} primes.c -o primes
+	${CC} ${CFLAGS} -o primes ${FILES}
 	
 run: make
 	./primes
