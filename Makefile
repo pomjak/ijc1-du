@@ -7,29 +7,29 @@
 #
 
 CC = gcc
-CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra -lm
+CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra 
 FILES = primes.c bitset.c error.c eratosthenes.c
 
-make: primes.c error.c bitset.c eratosthenes.c
-	${CC} ${CFLAGS} -o primes ${FILES}
-	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
+make: ${FILES}
+	${CC} ${CFLAGS} -o primes ${FILES} -lm
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
-i: primes.c
-	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
+i: ${FILES}
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
-macro: primes.c
-	${CC} ${CFLAGS} -o primes ${FILES}
+macro: ${FILES}
+	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	
 run: make
 	./primes
 	./primes-i
 
-32: primes.c
-	${CC} -m32 primes.c -o primes
-	${CC} -m32 -DUSE_INLINE primes.c -o primes
+32: ${FILES}
+	${CC} -m32 -o primes ${FILES} -lm
+	${CC} -m32 -DUSE_INLINE -o primes ${FILES} -lm
 
-e: primes.c
-	${CC} -E -P primes.c
+e: ${FILES}
+	${CC} -E -P ${FILES} -lm
 
 fac: make
 	./primes|factor

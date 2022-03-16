@@ -1,7 +1,6 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
-ulimit -s 37000
-gcc -O0 -g -std=c11 -pedantic -Wall -Wextra -lm -o primes primes.c bitset.c error.c eratosthenes.c
-gcc -O0 -g -std=c11 -pedantic -Wall -Wextra -lm -DUSE_INLINE -o primes-i primes.c bitset.c error.c eratosthenes.c
+gcc -O2 -g -std=c11 -pedantic -Wall -Wextra  -o primes primes.c bitset.c error.c eratosthenes.c -lm
+gcc -O2 -g -std=c11 -pedantic -Wall -Wextra  -DUSE_INLINE -o primes-i primes.c bitset.c error.c eratosthenes.c -lm
 make: Leaving directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
  

@@ -9,9 +9,11 @@
 
 #include "eratosthenes.h"
 
+
 void Eratosthenes(bitset_t *pole)
 {
-    for(bitset_index_t i = 2; i <= sqrt(N);i++)
+    double limit = sqrt(bitset_size(pole));
+    for(bitset_index_t i = 2; i <= limit;i++)
     {
         if(bitset_getbit(pole,i)==0)
         {

@@ -4,6 +4,7 @@
         "bitset.h": "c",
         "error.h": "c",
         "limits.h": "c",
-        "assert.h": "c"
+        "assert.h": "c",
+        "ppm.h": "c"
     }
 }

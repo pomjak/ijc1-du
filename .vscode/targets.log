@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Mar 15 17:30:33 2022
+# Make data base, printed on Wed Mar 16 14:16:38 2022
 
 # Variables
 
@@ -49,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # makefile (from 'Makefile', line 10)
-CFLAGS = -O0 -g -std=c11 -pedantic -Wall -Wextra -lm
+CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra 
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -87,7 +85,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1743,unix/natascha:/tmp/.ICE-unix/1743
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1794,unix/natascha:/tmp/.ICE-unix/1794
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -105,7 +103,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4548
+GIO_LAUNCHED_DESKTOP_FILE_PID = 19724
 # automatic
 %F = $(notdir $%)
 # environment
@@ -121,7 +119,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1847
+SSH_AGENT_PID = 1899
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -159,7 +157,7 @@ SHLVL = 0
 # makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e174d872-4f0d-4031-85aa-ae3f06fddb16.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2cda4142-6090-4b14-9eb8-d56868962f52.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -233,11 +231,11 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4548
+VSCODE_PID = 19724
 # makefile (from 'Makefile', line 11)
 FILES = primes.c bitset.c error.c eratosthenes.c
 # variable set hash-table stats:
-# Load=112/1024=11%, Rehash=0, Collisions=10/137=7%
+# Load=112/1024=11%, Rehash=0, Collisions=10/142=7%
 
 # Pattern-specific Variable Values
 
@@ -245,9 +243,9 @@ FILES = primes.c bitset.c error.c eratosthenes.c
 
 # Directories
 
-# . (device 2050, inode 44436219): 13 files, no impossibilities.
+# . (device 2050, inode 44436219): 15 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -259,7 +257,7 @@ fac: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
+#  recipe to execute (from 'Makefile', line 35):
 	./primes|factor
 	./primes|factor
 
@@ -269,20 +267,22 @@ primes.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-e: primes.c
+e: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
-	${CC} -E -P primes.c
+#  recipe to execute (from 'Makefile', line 32):
+	${CC} -E -P ${FILES} -lm
 
-i: primes.c
+i: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
  
+make: *** No rule to make target 'all'.  Stop.
+ 
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
+#  recipe to execute (from 'Makefile', line 18):
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
 # Not a target:
 all:
@@ -297,34 +297,34 @@ bitset.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-32: primes.c
+32: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
-	${CC} -m32 primes.c -o primes
-	${CC} -m32 -DUSE_INLINE primes.c -o primes
+#  recipe to execute (from 'Makefile', line 28):
+	${CC} -m32 -o primes ${FILES} -lm
+	${CC} -m32 -DUSE_INLINE -o primes ${FILES} -lm
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-15 17:29:26.373321959
+#  Last modified 2022-03-15 18:28:54.600286261
 #  File has been updated.
 #  Successfully updated.
 
-macro: primes.c
+macro: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 22):
-	${CC} ${CFLAGS} -o primes ${FILES}
+#  recipe to execute (from 'Makefile', line 21):
+	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	
 
 time: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
+#  recipe to execute (from 'Makefile', line 39):
 	time ./primes
 	time ./primes
 
@@ -340,20 +340,19 @@ eratosthenes.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-make: primes.c error.c bitset.c eratosthenes.c
+make: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 14):
-	ulimit -s 37000
-	${CC} ${CFLAGS} -o primes ${FILES}
-	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES}
+	${CC} ${CFLAGS} -o primes ${FILES} -lm
+	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
 run: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 25):
+#  recipe to execute (from 'Makefile', line 24):
 	./primes
 	./primes-i
 
@@ -364,19 +363,19 @@ error.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=2/37=5%
+# Load=16/1024=2%, Rehash=0, Collisions=6/49=12%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 193 B / avg = 7 B
-# current buf: size = 8162 B / used = 193 B / count = 26 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 213 B / avg = 7 B
+# current buf: size = 8162 B / used = 213 B / count = 28 / avg = 7 B
 
-# strcache performance: lookups = 49 / hit rate = 46%
+# strcache performance: lookups = 63 / hit rate = 55%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=4/49=8%
-# Finished Make data base on Tue Mar 15 17:30:33 2022
+# Load=28/8192=0%, Rehash=0, Collisions=8/63=13%
+# Finished Make data base on Wed Mar 16 14:16:38 2022
 
  
