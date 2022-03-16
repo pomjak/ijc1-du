@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Mar 16 14:16:38 2022
+# Make data base, printed on Wed Mar 16 15:52:36 2022
 
 # Variables
 
@@ -68,6 +70,8 @@ XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/pomjak/.local/share/f
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 12)
+SFILES = steg-decode.c ppm.c error.c eratosthenes.c
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -235,7 +239,7 @@ VSCODE_PID = 19724
 # makefile (from 'Makefile', line 11)
 FILES = primes.c bitset.c error.c eratosthenes.c
 # variable set hash-table stats:
-# Load=112/1024=11%, Rehash=0, Collisions=10/142=7%
+# Load=113/1024=11%, Rehash=0, Collisions=10/143=7%
 
 # Pattern-specific Variable Values
 
@@ -243,9 +247,9 @@ FILES = primes.c bitset.c error.c eratosthenes.c
 
 # Directories
 
-# . (device 2050, inode 44436219): 15 files, no impossibilities.
+# . (device 2050, inode 44436219): 18 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -257,7 +261,7 @@ fac: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 39):
 	./primes|factor
 	./primes|factor
 
@@ -271,17 +275,15 @@ e: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
+#  recipe to execute (from 'Makefile', line 36):
 	${CC} -E -P ${FILES} -lm
 
 i: primes.c bitset.c error.c eratosthenes.c
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
-make: *** No rule to make target 'all'.  Stop.
- 
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
+#  recipe to execute (from 'Makefile', line 22):
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
 # Not a target:
@@ -290,6 +292,13 @@ all:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
+
+steg: steg-decode.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+	${CC} ${CFLAGS} -o steg-decode ${SFILES} -lm 	
 
 # Not a target:
 bitset.c:
@@ -301,14 +310,14 @@ bitset.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 32):
 	${CC} -m32 -o primes ${FILES} -lm
 	${CC} -m32 -DUSE_INLINE -o primes ${FILES} -lm
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-15 18:28:54.600286261
+#  Last modified 2022-03-16 15:52:29.773928132
 #  File has been updated.
 #  Successfully updated.
 
@@ -316,7 +325,7 @@ macro: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
+#  recipe to execute (from 'Makefile', line 25):
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	
 
@@ -324,7 +333,7 @@ time: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 39):
+#  recipe to execute (from 'Makefile', line 43):
 	time ./primes
 	time ./primes
 
@@ -344,7 +353,7 @@ make: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 15):
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
@@ -352,7 +361,7 @@ run: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
+#  recipe to execute (from 'Makefile', line 28):
 	./primes
 	./primes-i
 
@@ -362,20 +371,26 @@ error.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+steg-decode.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=6/49=12%
+# Load=18/1024=2%, Rehash=0, Collisions=6/52=12%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 213 B / avg = 7 B
-# current buf: size = 8162 B / used = 213 B / count = 28 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 245 B / avg = 7 B
+# current buf: size = 8162 B / used = 245 B / count = 32 / avg = 7 B
 
-# strcache performance: lookups = 63 / hit rate = 55%
+# strcache performance: lookups = 69 / hit rate = 53%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=8/63=13%
-# Finished Make data base on Wed Mar 16 14:16:38 2022
+# Load=32/8192=0%, Rehash=0, Collisions=8/69=12%
+# Finished Make data base on Wed Mar 16 15:52:36 2022
 
  

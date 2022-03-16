@@ -9,10 +9,14 @@
 CC = gcc
 CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra 
 FILES = primes.c bitset.c error.c eratosthenes.c
+SFILES = steg-decode.c ppm.c error.c eratosthenes.c
 
 make: ${FILES}
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
+
+steg: steg-decode.c
+	${CC} ${CFLAGS} -o steg-decode ${SFILES} -lm 	
 
 i: ${FILES}
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm

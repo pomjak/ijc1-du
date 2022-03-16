@@ -1,5 +1,7 @@
 #include <stdio.h>
 //#include <stdlib.h>
+#include "bitset.h"
+#include "error.h"
 
 #ifndef PPM_H
 #define PPM_H
