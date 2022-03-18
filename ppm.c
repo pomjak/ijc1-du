@@ -6,7 +6,7 @@ struct ppm * ppm_read(const char * filename)
     unsigned int xsizetxt,ysizetxt;
 
     FILE *ppm_file = fopen(filename, "rb");
-    if (!ppm_file){error_exit("ppm_read:Soubor nebyl nalezen\n");}
+    if (!ppm_file){error_exit("ppm_read:Soubor nebyl nalezen\n");return NULL;}
 
 
     if(2 != fscanf(ppm_file,"P6 %u %u 255",&xsizetxt,&ysizetxt))
@@ -20,8 +20,8 @@ struct ppm * ppm_read(const char * filename)
     
     if(size_of_image > MAX_SIZE)
     {
-        warning_msg("ppm_read:Soubor prilis velky\n");
         fclose(ppm_file);
+        error_exit("ppm_read:Soubor prilis velky\n");
         return NULL;
     } 
 
@@ -38,18 +38,13 @@ struct ppm * ppm_read(const char * filename)
     image->xsize = xsizetxt;
     image->ysize = ysizetxt;
 
-    if(fread(image->data,(size_t)sizeof(char),(size_t)size_of_image,ppm_file) != size_of_image || ferror(ppm_file) != 0)
+    if(fread(image->data,(size_t)sizeof(char),(size_t)size_of_image,ppm_file) != size_of_image)
     {
         warning_msg("ppm_read:Chyba cteni dat\n");
         free(image);
         fclose(ppm_file);
         return NULL;
     }
-    
-    /*for(unsigned int j = 0; j < size_of_image; j++)
-    {
-        putchar(image->data[j]);
-    }*/
     
     
     fclose(ppm_file);

@@ -25,41 +25,40 @@
 
         Eratosthenes(arr_eras);
  
-        char buffer = 0;
-        char offset = 0;
+        char buffer = 0,offset = 0;
+        int null_char_found = 0;
         for(int i = 29; i < size_of_image; i++)
         {
             
             if(!bitset_getbit(arr_eras,i))
             {
 
-                if((image->data[i+1] & 1)) 
-                {
-                    buffer |= (1 << offset);
-                    
-                }
-
-                else
-                {
-                    buffer &= ~(1 << offset);
-                }
-
+                if((image->data[i+1] & 1)) buffer |= (1 << offset);
+        
                 offset++;
 
                 if(offset == CHAR_BIT) 
                 {   
-                    if(buffer == 0)break;
+                    if(buffer == 0)
+                    {
+                        null_char_found = 1;
+                        break;
+                    }
                     else
                     {
                         offset = 0;
                         printf("%c",buffer);
                         buffer = 0;
+
                     }
                     
                 }
             }
         }
         printf("\n");
+        if(!null_char_found) error_exit("Nenalezen koncici znak\n");
+
+        
         bitset_free(arr_eras);
         ppm_free(image);
 
