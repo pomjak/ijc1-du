@@ -15,7 +15,7 @@
 int main(void)
 {
     clock_t start = clock();
-    bitset_create(p,300000000);
+    bitset_create(p,N);
 
     int saved = 0;
     bitset_t pole[10] = {0,};

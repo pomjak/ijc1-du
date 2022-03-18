@@ -14,9 +14,10 @@ SFILES = steg-decode.c ppm.c error.c eratosthenes.c
 make: ${FILES}
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
+	${CC} ${CFLAGS} -o steg-decode ${SFILES} -lm
 
-steg: steg-decode.c
-	${CC} ${CFLAGS} -o steg-decode ${SFILES} -lm 	
+steg: make 
+	./steg-decode du1-obrazek.ppm 	
 
 i: ${FILES}
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
@@ -27,6 +28,7 @@ macro: ${FILES}
 run: make
 	./primes
 	./primes-i
+	./steg-decode du1-obrazek.ppm
 
 32: ${FILES}
 	${CC} -m32 -o primes ${FILES} -lm

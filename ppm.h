@@ -1,12 +1,14 @@
 #include <stdio.h>
-//#include <stdlib.h>
+#include <stdlib.h>
 #include "bitset.h"
 #include "error.h"
+#include <limits.h>
 
 #ifndef PPM_H
 #define PPM_H
 
-#define MAX_SIZE (8000*8000*3)
+#define RGB 3
+#define MAX_SIZE (8000*8000*RGB)
 
 struct ppm 
 {

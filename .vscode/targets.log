@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Mar 16 15:52:36 2022
+# Make data base, printed on Fri Mar 18 15:08:12 2022
 
 # Variables
 
@@ -89,7 +89,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1794,unix/natascha:/tmp/.ICE-unix/1794
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1922,unix/natascha:/tmp/.ICE-unix/1922
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -107,7 +107,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 19724
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2700
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +123,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1899
+SSH_AGENT_PID = 2027
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -161,7 +161,7 @@ SHLVL = 0
 # makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2cda4142-6090-4b14-9eb8-d56868962f52.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-37dbf5b1-8811-4887-b6e9-46980098ee33.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -235,7 +235,7 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 19724
+VSCODE_PID = 2700
 # makefile (from 'Makefile', line 11)
 FILES = primes.c bitset.c error.c eratosthenes.c
 # variable set hash-table stats:
@@ -247,21 +247,22 @@ FILES = primes.c bitset.c error.c eratosthenes.c
 
 # Directories
 
-# . (device 2050, inode 44436219): 18 files, no impossibilities.
+# . (device 2050, inode 44436219): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
+ 
 # Files
 
 fac: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 39):
+#  recipe to execute (from 'Makefile', line 41):
 	./primes|factor
 	./primes|factor
 
@@ -275,15 +276,14 @@ e: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
+#  recipe to execute (from 'Makefile', line 38):
 	${CC} -E -P ${FILES} -lm
 
 i: primes.c bitset.c error.c eratosthenes.c
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 22):
+#  recipe to execute (from 'Makefile', line 23):
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
 # Not a target:
@@ -293,12 +293,12 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-steg: steg-decode.c
+steg: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	${CC} ${CFLAGS} -o steg-decode ${SFILES} -lm 	
+#  recipe to execute (from 'Makefile', line 20):
+	./steg-decode du1-obrazek.ppm 	
 
 # Not a target:
 bitset.c:
@@ -310,14 +310,14 @@ bitset.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
+#  recipe to execute (from 'Makefile', line 34):
 	${CC} -m32 -o primes ${FILES} -lm
 	${CC} -m32 -DUSE_INLINE -o primes ${FILES} -lm
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-16 15:52:29.773928132
+#  Last modified 2022-03-18 15:05:34.549960933
 #  File has been updated.
 #  Successfully updated.
 
@@ -325,7 +325,7 @@ macro: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 25):
+#  recipe to execute (from 'Makefile', line 26):
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	
 
@@ -333,7 +333,7 @@ time: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 45):
 	time ./primes
 	time ./primes
 
@@ -356,14 +356,16 @@ make: primes.c bitset.c error.c eratosthenes.c
 #  recipe to execute (from 'Makefile', line 15):
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
+	${CC} ${CFLAGS} -o steg-decode ${SFILES} -lm
 
 run: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 29):
 	./primes
 	./primes-i
+	./steg-decode du1-obrazek.ppm
 
 # Not a target:
 error.c:
@@ -371,26 +373,20 @@ error.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-steg-decode.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=6/52=12%
+# Load=17/1024=2%, Rehash=0, Collisions=6/51=12%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 245 B / avg = 7 B
-# current buf: size = 8162 B / used = 245 B / count = 32 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 261 B / avg = 7 B
+# current buf: size = 8162 B / used = 261 B / count = 33 / avg = 7 B
 
-# strcache performance: lookups = 69 / hit rate = 53%
+# strcache performance: lookups = 70 / hit rate = 52%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=8/69=12%
-# Finished Make data base on Wed Mar 16 15:52:36 2022
+# Load=33/8192=0%, Rehash=0, Collisions=8/70=11%
+# Finished Make data base on Fri Mar 18 15:08:12 2022
 
  
