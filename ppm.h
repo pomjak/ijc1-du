@@ -9,6 +9,7 @@
 
 #define RGB 3
 #define MAX_SIZE (8000*8000*RGB)
+#define SIZE_OF_IMAGE (image->xsize * image->ysize * RGB)
 
 struct ppm 
 {

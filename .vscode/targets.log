@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Mar 18 15:08:12 2022
+# Make data base, printed on Sat Mar 19 19:15:03 2022
 
 # Variables
 
@@ -89,7 +89,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1922,unix/natascha:/tmp/.ICE-unix/1922
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1735,unix/natascha:/tmp/.ICE-unix/1735
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -107,7 +107,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2700
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2426
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +123,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 2027
+SSH_AGENT_PID = 1839
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -161,7 +161,7 @@ SHLVL = 0
 # makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-37dbf5b1-8811-4887-b6e9-46980098ee33.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5d371657-ee35-4542-98fc-b7924fe47dd7.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -235,7 +235,7 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2700
+VSCODE_PID = 2426
 # makefile (from 'Makefile', line 11)
 FILES = primes.c bitset.c error.c eratosthenes.c
 # variable set hash-table stats:
@@ -247,22 +247,21 @@ FILES = primes.c bitset.c error.c eratosthenes.c
 
 # Directories
 
-# . (device 2050, inode 44436219): 19 files, no impossibilities.
+# . (device 2050, inode 44436219): 20 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
- 
 # Files
 
 fac: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 40):
 	./primes|factor
 	./primes|factor
 
@@ -276,10 +275,11 @@ e: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 37):
 	${CC} -E -P ${FILES} -lm
 
 i: primes.c bitset.c error.c eratosthenes.c
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -310,14 +310,14 @@ bitset.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 33):
 	${CC} -m32 -o primes ${FILES} -lm
 	${CC} -m32 -DUSE_INLINE -o primes ${FILES} -lm
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-18 15:05:34.549960933
+#  Last modified 2022-03-19 19:14:59.377852088
 #  File has been updated.
 #  Successfully updated.
 
@@ -333,7 +333,7 @@ time: make
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 45):
+#  recipe to execute (from 'Makefile', line 44):
 	time ./primes
 	time ./primes
 
@@ -365,7 +365,6 @@ run: make
 #  recipe to execute (from 'Makefile', line 29):
 	./primes
 	./primes-i
-	./steg-decode du1-obrazek.ppm
 
 # Not a target:
 error.c:
@@ -381,12 +380,12 @@ error.c:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 261 B / avg = 7 B
-# current buf: size = 8162 B / used = 261 B / count = 33 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 274 B / avg = 8 B
+# current buf: size = 8162 B / used = 274 B / count = 34 / avg = 8 B
 
-# strcache performance: lookups = 70 / hit rate = 52%
+# strcache performance: lookups = 71 / hit rate = 52%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=8/70=11%
-# Finished Make data base on Fri Mar 18 15:08:12 2022
+# Load=34/8192=0%, Rehash=0, Collisions=8/71=11%
+# Finished Make data base on Sat Mar 19 19:15:03 2022
 
  

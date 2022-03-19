@@ -14,14 +14,12 @@
 
         if(image == NULL)
         {
-            error_exit("neco se strasne pokazilo\n");
+            error_exit("steg-decode: Chyba\n");
         }
 
         int size_of_image = (image->xsize * image->ysize * RGB);
 
-        
-
-        bitset_alloc(arr_eras,145200); 
+        bitset_alloc(arr_eras,size_of_image); 
 
         Eratosthenes(arr_eras);
  

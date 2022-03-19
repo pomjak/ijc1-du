@@ -45,7 +45,7 @@ bitset_t jmeno_pole\
 [((velikost/BITSET_BIT)\
 +\
 ((velikost % BITSET_BIT) > 0 ? 1 : 0) + OFFSET)]={velikost,0,};\
-static_assert(velikost <= sizeof(jmeno_pole)*CHAR_BIT, "Spatne zadana velikost statickeho pole!!!\n");
+static_assert(velikost <= N, "Spatne zadana velikost statickeho pole!!!\n");
 
 
 /*
@@ -65,7 +65,7 @@ bitset_t *jmeno_pole = (bitset_t*) calloc(\
 ((velikost % BITSET_BIT) > 0 ? 1 : 0) + OFFSET),sizeof(bitset_t));\
 if(jmeno_pole == NULL){error_exit("bitset_alloc: Chyba alokace paměti");}\
 jmeno_pole[0] = velikost;\
-static_assert(velikost <= N, "Spatne zadana velikost statickeho pole!!!\n");
+assert(velikost <= N);
 
 
 /*

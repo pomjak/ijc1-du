@@ -28,7 +28,6 @@ macro: ${FILES}
 run: make
 	./primes
 	./primes-i
-	./steg-decode du1-obrazek.ppm
 
 32: ${FILES}
 	${CC} -m32 -o primes ${FILES} -lm

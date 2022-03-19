@@ -6,6 +6,7 @@
         "limits.h": "c",
         "assert.h": "c",
         "ppm.h": "c",
-        "eratosthenes.h": "c"
+        "eratosthenes.h": "c",
+        "time.h": "c"
     }
 }
