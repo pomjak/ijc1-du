@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/pomjak/Dropbox/VUT/notes/2.semestr/IJC/project_one'
 gcc -O2 -g -std=c11 -pedantic -Wall -Wextra  -o primes primes.c bitset.c error.c eratosthenes.c -lm
 gcc -O2 -g -std=c11 -pedantic -Wall -Wextra  -DUSE_INLINE -o primes-i primes.c bitset.c error.c eratosthenes.c -lm

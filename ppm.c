@@ -1,13 +1,21 @@
+/*
+*       ppm.c
+*       IJC-DU1 
+*       Author : Pomsar Jakub
+*       Organization : VUT FIT
+*       Date : March 15, 2022
+*       Compiled : gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04)
+*/
 #include "ppm.h"
 
 
 struct ppm * ppm_read(const char * filename)
 {
-    unsigned int xsizetxt,ysizetxt;
 
     FILE *ppm_file = fopen(filename, "rb");
     if (!ppm_file){error_exit("ppm_read:Soubor nebyl nalezen\n");return NULL;}
 
+    unsigned int xsizetxt,ysizetxt;
 
     if(2 != fscanf(ppm_file,"P6 %u %u 255",&xsizetxt,&ysizetxt))
     {
@@ -54,4 +62,5 @@ struct ppm * ppm_read(const char * filename)
 void ppm_free(struct ppm *p)
 {
     free(p);
+    p =NULL;
 }

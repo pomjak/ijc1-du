@@ -1,3 +1,12 @@
+/*
+*       steg-decode.c
+*       IJC-DU1 
+*       Author : Pomsar Jakub
+*       Organization : VUT FIT
+*       Date : March 15, 2022
+*       Compiled : gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04)
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "bitset.h"

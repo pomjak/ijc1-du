@@ -39,7 +39,6 @@ typedef unsigned long bitset_index_t;
 *           bitset_create(q,100000L);    // q = pole 100000 bitů, nulováno
 *           bitset_create(q,-100);       // chyba při překladu
 */
-
 #define bitset_create(jmeno_pole,velikost)\
 bitset_t jmeno_pole\
 [((velikost/BITSET_BIT)\
@@ -57,7 +56,6 @@ static_assert(velikost <= N, "Spatne zadana velikost statickeho pole!!!\n");
 *       Pokud alokace selže, ukončete program s chybovým hlášením:
 *       "bitset_alloc: Chyba alokace paměti"
 */
-
 #define bitset_alloc(jmeno_pole, velikost)\
 bitset_t *jmeno_pole = (bitset_t*) calloc(\
 ((velikost/BITSET_BIT)\
@@ -115,7 +113,7 @@ assert(velikost <= N);
 }
 #else
 #define bitset_setbit(jmeno_pole,index,vyraz)\
-if((bitset_t)index > bitset_size(jmeno_pole) - OFFSET){error_exit("bitset_setbit: Index %lu mimo rozsah 0..%lu",\
+if((bitset_index_t)index >= bitset_size(jmeno_pole)){error_exit("bitset_setbit: Index %lu mimo rozsah 0..%lu",\
 (bitset_t)index, bitset_size(jmeno_pole)-OFFSET);}\
 else if(vyraz) { jmeno_pole[OFFSET + (index/BITSET_BIT)] |= (1UL << (index % BITSET_BIT)); }\
 else { jmeno_pole[OFFSET + (index/BITSET_BIT)] &= ~(1UL << (index % BITSET_BIT)); }
@@ -130,7 +128,7 @@ else { jmeno_pole[OFFSET + (index/BITSET_BIT)] &= ~(1UL << (index % BITSET_BIT))
 #ifdef USE_INLINE
  inline bitset_t bitset_getbit(bitset_t *jmeno_pole, bitset_index_t index)
 {
-    return (((bitset_t)index > (bitset_size(jmeno_pole) - OFFSET))\
+    return (((bitset_index_t)index >= (bitset_size(jmeno_pole)))\
     ?\
     error_exit("bitset_getbit: Index %lu mimo rozsah 0..%lu",\
     (bitset_t)index, bitset_size(jmeno_pole)),0UL\

@@ -10,6 +10,7 @@ CC = gcc
 CFLAGS = -O2 -g -std=c11 -pedantic -Wall -Wextra 
 FILES = primes.c bitset.c error.c eratosthenes.c
 SFILES = steg-decode.c ppm.c error.c eratosthenes.c
+LDFLAGS += -fsanitize=address
 
 make: ${FILES}
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
@@ -21,6 +22,9 @@ steg: make
 
 i: ${FILES}
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
+
+sanit: ${FILES}
+	${CC} ${CFLAGS} ${LDFLAGS} -o primes ${FILES} -lm
 
 macro: ${FILES}
 	${CC} ${CFLAGS} -o primes ${FILES} -lm
