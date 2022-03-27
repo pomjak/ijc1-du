@@ -15,7 +15,7 @@
 int main(void)
 {
     clock_t start = clock();
-    bitset_alloc(p,N);
+    bitset_create(p,N);
 
     int saved = 0;
     bitset_t pole[10] = {0,};
@@ -35,7 +35,6 @@ int main(void)
     for (int idx = 9; idx > -1; --idx)
         printf("%lu\n",pole[idx]);
 
-    bitset_free(p);
 
     fprintf(stderr, "Time=%.3g\n", (double)(clock()-start)/CLOCKS_PER_SEC);
 

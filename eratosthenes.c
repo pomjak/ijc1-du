@@ -12,15 +12,17 @@
 
 void Eratosthenes(bitset_t *pole)
 {   
-    bitset_setbit(pole,0,1);
+    memset(pole+1,0x55,(bitset_size(pole)/CHAR_BIT));//prepsani vsech nasobku 2 (vcetne 0) pomoci memset
     bitset_setbit(pole,1,1);
-    double limit = sqrt(bitset_size(pole));
-    for(bitset_index_t i = 2; i <= limit;++i)
+
+    unsigned int limit = sqrt(bitset_size(pole));
+    
+    for(bitset_index_t i = 3; i <= limit;i+=2)
     {
-        if(bitset_getbit(pole,i)==0)
+        if(!bitset_getbit(pole,i))
         {
-            for(bitset_index_t j = 2; i*j < bitset_size(pole); ++j)
-                bitset_setbit(pole,i*j,1);
+            for(bitset_index_t j = (i*i); j < bitset_size(pole); j+=(2*i))
+                bitset_setbit(pole,j,1);
         }
     }
 }

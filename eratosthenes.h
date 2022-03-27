@@ -8,6 +8,7 @@
 */
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "bitset.h"
 
 #ifndef ERAS_H

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Mar 21 17:15:50 2022
+# Make data base, printed on Wed Mar 23 15:04:00 2022
 
 # Variables
 
@@ -89,7 +87,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/2063,unix/natascha:/tmp/.ICE-unix/2063
+SESSION_MANAGER = local/natascha:@/tmp/.ICE-unix/1740,unix/natascha:/tmp/.ICE-unix/1740
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -109,7 +107,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 24436
+GIO_LAUNCHED_DESKTOP_FILE_PID = 60645
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,7 +123,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 2168
+SSH_AGENT_PID = 1845
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -163,7 +161,7 @@ SHLVL = 0
 # makefile (from 'Makefile', line 9)
 CC = gcc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b4b145da-23de-4244-be09-9482b2e29592.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ce20b866-816a-47e9-9785-d4efa3b0c66f.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -237,7 +235,7 @@ LC_ADDRESS = cs_CZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 24436
+VSCODE_PID = 60645
 # makefile (from 'Makefile', line 11)
 FILES = primes.c bitset.c error.c eratosthenes.c
 # variable set hash-table stats:
@@ -279,12 +277,14 @@ e: primes.c bitset.c error.c eratosthenes.c
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 41):
 	${CC} -E -P ${FILES} -lm
- 
 
 i: primes.c bitset.c error.c eratosthenes.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
+make: *** No rule to make target 'all'.  Stop.
+ 
 #  recipe to execute (from 'Makefile', line 24):
 	${CC} ${CFLAGS} -DUSE_INLINE -o primes-i ${FILES} -lm
 
@@ -389,12 +389,12 @@ sanit: primes.c bitset.c error.c eratosthenes.c
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 286 B / avg = 7 B
-# current buf: size = 8162 B / used = 286 B / count = 36 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 289 B / avg = 8 B
+# current buf: size = 8162 B / used = 289 B / count = 36 / avg = 8 B
 
 # strcache performance: lookups = 78 / hit rate = 53%
 # hash-table stats:
 # Load=36/8192=0%, Rehash=0, Collisions=9/78=12%
-# Finished Make data base on Mon Mar 21 17:15:50 2022
+# Finished Make data base on Wed Mar 23 15:04:00 2022
 
  
